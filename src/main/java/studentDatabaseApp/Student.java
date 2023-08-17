@@ -8,7 +8,7 @@ public class Student {
     private String firstName;
     private String lastName;
     private int gradeYear;
-    private int studentID;
+    private String studentID;
     private List<Course> courses;
     private double tuitionBalance;
 
@@ -26,14 +26,13 @@ public class Student {
                 "\n1 - Freshman\n2 - Sophomore\n3 - Junior\n4 - Senior");
         this.gradeYear = scanner.nextInt();
         System.out.println(firstName + " " + lastName + " " + gradeYear);
+        this.studentID = generateID();
         id++;
-        this.studentID = generateID(gradeYear);
     }
 
     //    Generate an ID
-    private int generateID(int gradeYear) {
-
-        return (int) (gradeYear + Math.random());
+    private String generateID() {
+        return gradeYear + "" + id;
     }
 
 //    Enroll in courses
