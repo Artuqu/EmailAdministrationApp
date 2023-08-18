@@ -18,16 +18,17 @@ public class Student {
 
     public Student() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter student's first name: ");
+        System.out.print("Enter student's first name: ");
         this.firstName = scanner.nextLine();
-        System.out.println("Enter student's last name: ");
+        System.out.print("Enter student's last name: ");
         this.lastName = scanner.nextLine();
-        System.out.println("Enter year of grad:" +
-                "\n1 - Freshman\n2 - Sophomore\n3 - Junior\n4 - Senior");
+        System.out.print("Year of grad:" +
+                "\n1 - Freshman\n2 - Sophomore\n3 - Junior\n4 - Senior\nEnter class level: ");
         this.gradeYear = scanner.nextInt();
         System.out.println(firstName + " " + lastName + " " + gradeYear);
         this.studentID = generateID();
         enroll();
+        payTuition();
         id++;
     }
 
@@ -39,21 +40,34 @@ public class Student {
     //    Enroll in courses
     public void enroll() {
 //        Get inside a loop, user hits Q
-        System.out.println("Enter course to enroll (Q to quit): ");
-        Scanner scanner = new Scanner(System.in);
-        String course = scanner.nextLine();
-        while (!course.equals("Q")) {
-            courses += "\n" + course;
-            tuitionBalance += costOfCourse;
-            course = scanner.nextLine();
-        }
-        System.out.println("ENROLLED IN: " + courses);
-        System.out.println("TUITION BALANCE " + tuitionBalance);
+        do {
+            System.out.print("Enter course to enroll (Q to quit): ");
+            Scanner scanner = new Scanner(System.in);
+            String course = scanner.nextLine();
+            if (!course.equals("Q")) {
+                courses += "\n" + course;
+                tuitionBalance += costOfCourse;
+            } else {
+                break;
+            }
+        } while (2 != 0);
     }
 
-//    View balance
+    //    View balance
+    public void viewBalance() {
+        System.out.println("Your balance is: $" + this.tuitionBalance);
+    }
 
-//    Pay Tuition
+    //    Pay Tuition
+    public void payTuition() {
+        viewBalance();
+        System.out.print("How much do you want to pay now? $");
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        tuitionBalance -= payment;
+        System.out.println("Thank you for your payment of $" + payment);
+        viewBalance();
+    }
 
 //    Show status
 
