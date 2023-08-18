@@ -1,7 +1,6 @@
 package studentDatabaseApp;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,7 +21,9 @@ public class StudentDatabaseApp {
             name = "student" + i;
             Student name = new Student();
             studentList.add(name);
+            System.out.println(name.showInfo());
         }
+
         scanner.close();
 //        for (Student s : studentList) {
 //            System.out.println(s);

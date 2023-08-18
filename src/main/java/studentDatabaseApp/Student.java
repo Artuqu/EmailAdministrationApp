@@ -25,7 +25,6 @@ public class Student {
         System.out.print("Year of grad:" +
                 "\n1 - Freshman\n2 - Sophomore\n3 - Junior\n4 - Senior\nEnter class level: ");
         this.gradeYear = scanner.nextInt();
-        System.out.println(firstName + " " + lastName + " " + gradeYear);
         this.studentID = generateID();
         enroll();
         payTuition();
@@ -71,16 +70,12 @@ public class Student {
 
 //    Show status
 
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", gradeYear=" + gradeYear +
-                ", studentID='" + studentID + '\'' +
-                ", courses='" + courses + '\'' +
-                ", tuitionBalance=" + tuitionBalance +
-                '}';
+    public String showInfo() {
+        return
+                "Name: " + firstName + " " + lastName +
+                        "\nGradeYear: " + gradeYear +
+                        "\nStudentID: " + studentID +
+                        "\nCourses enrolled: " + courses +
+                        "\nBalance: " + tuitionBalance;
     }
 }
