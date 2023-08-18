@@ -14,7 +14,7 @@ public class Course {
             default -> "Computer Science";
         };
     }
-    private static double costOfCourse = 600;
+
 
 
 }

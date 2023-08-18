@@ -1,6 +1,5 @@
 package studentDatabaseApp;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Student {
@@ -9,8 +8,9 @@ public class Student {
     private String lastName;
     private int gradeYear;
     private String studentID;
-    private List<Course> courses;
-    private double tuitionBalance;
+    private String courses = "";
+    private static double costOfCourse = 600;
+    private double tuitionBalance = 0;
 
     private static int id = 1000;
 
@@ -27,6 +27,7 @@ public class Student {
         this.gradeYear = scanner.nextInt();
         System.out.println(firstName + " " + lastName + " " + gradeYear);
         this.studentID = generateID();
+        enroll();
         id++;
     }
 
@@ -35,7 +36,20 @@ public class Student {
         return gradeYear + "" + id;
     }
 
-//    Enroll in courses
+    //    Enroll in courses
+    public void enroll() {
+//        Get inside a loop, user hits Q
+        System.out.println("Enter course to enroll (Q to quit): ");
+        Scanner scanner = new Scanner(System.in);
+        String course = scanner.nextLine();
+        while (!course.equals("Q")) {
+            courses += "\n" + course;
+            tuitionBalance += costOfCourse;
+            course = scanner.nextLine();
+        }
+        System.out.println("ENROLLED IN: " + courses);
+        System.out.println("TUITION BALANCE " + tuitionBalance);
+    }
 
 //    View balance
 
@@ -50,8 +64,8 @@ public class Student {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", gradeYear=" + gradeYear +
-                ", studentID=" + studentID +
-                ", courses=" + courses +
+                ", studentID='" + studentID + '\'' +
+                ", courses='" + courses + '\'' +
                 ", tuitionBalance=" + tuitionBalance +
                 '}';
     }
