@@ -11,7 +11,8 @@ public class Checking extends Account {
 
     public Checking(String name, String socialSecurityNumber, double initialDeposit) {
         super(name, socialSecurityNumber, initialDeposit);
-        System.out.println("NEW CHECKING ACCOUNT");
+        digitAccountNumber = "1" + digitAccountNumber;
+        System.out.println("NEW CHECKING ACCOUNT, ACCOUNT NUMBER: " + digitAccountNumber);
     }
 
 //    List any methods specific to a checking account
