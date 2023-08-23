@@ -19,8 +19,7 @@ public abstract class Account implements IBaseRate {
 
         //    set account number
         this.digitAccountNumber = setAccountNumber();
-        System.out.print("NAME: " + name + ", SSN: " + socialSecurityNumber
-                + ", BALANCE: $" + balance + ", ACCOUNT: ");
+//        update an unique index
         index++;
 
     }
@@ -28,7 +27,7 @@ public abstract class Account implements IBaseRate {
     private String name;
     String digitAccountNumber;
     private String socialSecurityNumber;
-    private double accountType;
+    double accountType;
     private double balance;
 
     private static int index = 10000;
@@ -44,11 +43,18 @@ public abstract class Account implements IBaseRate {
 
 //    showInfo
 
-//    generate account number
 
+    public void showInfo() {
+        System.out.println("name: " + name + "\naccountNumber: " + digitAccountNumber +
+                "\nsocialSecurityNumber: " + socialSecurityNumber +
+                "\naccountType: " + accountType +
+                "\nbalance: " + balance);
+    }
+
+    //    generate account number
     private String setAccountNumber() {
         Random r = new Random();
-        String random = String.valueOf(r.nextInt(100,999));
+        String random = String.valueOf(r.nextInt(100, 999));
         int stringLength = socialSecurityNumber.length();
         String lastTwoOfSSH = socialSecurityNumber.substring(stringLength - 2, stringLength);
 

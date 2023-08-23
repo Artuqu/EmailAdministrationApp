@@ -12,9 +12,12 @@ public class Savings extends Account {
     public Savings(String name, String socialSecurityNumber, double initialDeposit) {
         super(name, socialSecurityNumber, initialDeposit);
         digitAccountNumber = "2" + digitAccountNumber;
-        System.out.println("NEW SAVINGS ACCOUNT, ACCOUNT NUMBER " + digitAccountNumber);
     }
 
 
 //    List any methods specific to a savings account
+    public void showInfo(){
+        super.showInfo();
+        System.out.println("ACCOUNT TYPE: Savings");
+    }
 }
