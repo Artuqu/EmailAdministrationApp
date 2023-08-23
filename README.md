@@ -53,6 +53,10 @@ deposit()
 withdraw()
 transfer()
 showInfo()
+* 
+ 11-Digit Account Number (generated with the following process: 1 or 2 depending on Savings or Checking,
+ last two digits of SSN, unique 5-digit numbers and random 3-digit numbers)
+
 * Savings Account holders are given Safety Deposit Box, identified by a 3-digit number and accessed with 4-digit code.
 * Checking Accounts holders are assigned a Debit Card with a 12-digit number and 4-digit PIN.
 * Both Accounts will use an interface that determines the base interest rate. Saving accounts will use 25 points less than base rate.

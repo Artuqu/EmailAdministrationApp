@@ -12,9 +12,14 @@ public class Savings extends Account {
 
 //    Constructor to initialize savings account properties
 
+    @Override
+    public double setRate() {
+        return getBaseRate() - .25;
+    }
+
     public Savings(String name, String socialSecurityNumber, double initialDeposit) {
         super(name, socialSecurityNumber, initialDeposit);
-        digitAccountNumber = "2" + digitAccountNumber;
+        digitAccountNumber = "1" + digitAccountNumber;
         setSafetyDepositBox();
     }
 

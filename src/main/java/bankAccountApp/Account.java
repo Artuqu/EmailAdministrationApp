@@ -9,6 +9,8 @@ public abstract class Account implements IBaseRate {
     //    holding data
     List<Account> accounts = new ArrayList<>();
 
+    public abstract double setRate();
+
 //    Constructor for set base properties and initialize the account
 
 
@@ -20,35 +22,39 @@ public abstract class Account implements IBaseRate {
         //    set account number
         this.digitAccountNumber = setAccountNumber();
 //        update an unique index
+        baseRate = setRate();
         index++;
-
     }
 
     private String name;
     String digitAccountNumber;
     private String socialSecurityNumber;
-    double accountType;
+    double baseRate;
     private double balance;
-
     private static int index = 10000;
 
-//    private double balance;
 
+    //    deposit
+    public void deposit() {
 
-//    deposit
+    }
 
-//    withdraw
+    //    withdraw
+    public void withdraw() {
 
-//    transfer
+    }
 
-//    showInfo
+    //    transfer
+    public void transfer() {
 
+    }
 
+    //    showInfo
     public void showInfo() {
-        System.out.println("name: " + name + "\naccountNumber: " + digitAccountNumber +
-                "\nsocialSecurityNumber: " + socialSecurityNumber +
-                "\naccountType: " + accountType +
-                "\nbalance: " + balance);
+        System.out.println("Name: " + name + "\nAccount Number: " + digitAccountNumber +
+                "\nSocial Security Number: " + socialSecurityNumber +
+                "\nRate: " + baseRate +
+                "\nBalance: " + balance);
     }
 
     //    generate account number
