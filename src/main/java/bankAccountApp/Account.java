@@ -11,9 +11,7 @@ public abstract class Account implements IBaseRate {
 
     public abstract double setRate();
 
-//    Constructor for set base properties and initialize the account
-
-
+    //    Constructor for set base properties and initialize the account
     public Account(String name, String socialSecurityNumber, double initialDeposit) {
         this.name = name;
         this.socialSecurityNumber = socialSecurityNumber;
@@ -35,18 +33,28 @@ public abstract class Account implements IBaseRate {
 
 
     //    deposit
-    public void deposit() {
-
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Depositing $" + amount);
+        showBalance();
     }
 
     //    withdraw
-    public void withdraw() {
-
+    public void withdraw(double amount) {
+        balance -= amount;
+        System.out.println("Withdrawing $" + amount);
+        showBalance();
     }
 
     //    transfer
-    public void transfer() {
+    public void transfer(String toWhere, double amount) {
+        balance -= amount;
+        System.out.println("Transferring $" + amount + " to " + toWhere);
+        showBalance();
+    }
 
+    public void showBalance() {
+        System.out.println("Your balance now is: $" + balance);
     }
 
     //    showInfo

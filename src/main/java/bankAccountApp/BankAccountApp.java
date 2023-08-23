@@ -11,5 +11,8 @@ public class BankAccountApp {
 
         Savings savings = new Savings("Peter Pelican", "123456789", 75);
         savings.showInfo();
+        savings.deposit(5000);
+        savings.withdraw(2000);
+        savings.transfer("Brokerage", 1000);
     }
 }
