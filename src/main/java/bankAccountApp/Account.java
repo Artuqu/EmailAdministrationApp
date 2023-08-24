@@ -20,14 +20,14 @@ public abstract class Account implements IBaseRate {
         //    set account number
         this.digitAccountNumber = setAccountNumber();
 //        update an unique index
-        baseRate = setRate();
+        rate = setRate();
         index++;
     }
 
     private String name;
     String digitAccountNumber;
     private String socialSecurityNumber;
-    double baseRate;
+    private double rate;
     private double balance;
     private static int index = 10000;
 
@@ -61,7 +61,7 @@ public abstract class Account implements IBaseRate {
     public void showInfo() {
         System.out.println("Name: " + name + "\nAccount Number: " + digitAccountNumber +
                 "\nSocial Security Number: " + socialSecurityNumber +
-                "\nRate: " + baseRate +
+                "\nRate: " + rate +
                 "\nBalance: " + balance);
     }
 
@@ -74,4 +74,11 @@ public abstract class Account implements IBaseRate {
 
         return lastTwoOfSSH + index + random;
     }
+
+//    public void compound() {
+//        double accruedInterest = balance * (rate / 100);
+//        balance += accruedInterest;
+//        System.out.println("Accrued Interest is $" + accruedInterest);
+//        showBalance();
+//    }
 }

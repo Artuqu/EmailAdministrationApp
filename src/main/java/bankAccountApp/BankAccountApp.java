@@ -1,18 +1,21 @@
 package bankAccountApp;
 
+import utilities.CSV;
+
+import java.io.IOException;
+import java.util.List;
+
 public class BankAccountApp {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException {
+        String file = "NewBankAccounts.csv";
 //        Read a CSV File then create new accounts based on that data
+        List<String[]> newAccountHolders = CSV.read(file);
+        for (String[] s : newAccountHolders) {
+            for (int i = 0; i < s.length; i++) {
+                System.out.println(s[i]);
+            }
+        }
 
-        Checking checking = new Checking("James Wilson", "354963875", 1500);
-        checking.showInfo();
-
-        Savings savings = new Savings("Peter Pelican", "123456789", 75);
-        savings.showInfo();
-        savings.deposit(5000);
-        savings.withdraw(2000);
-        savings.transfer("Brokerage", 1000);
     }
 }
