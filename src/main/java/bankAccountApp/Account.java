@@ -1,13 +1,8 @@
 package bankAccountApp;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public abstract class Account implements IBaseRate {
-
-    //    holding data
-    List<Account> accounts = new ArrayList<>();
 
     public abstract double setRate();
 
